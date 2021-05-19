@@ -19,12 +19,12 @@ pipeline
 				echo "Estoy generando el JAR del proyecto"
 				sh './mvnw package'
 			}
-		post {
-                	failure {
-                		echo 'Ha habido algún problema con el JAR'
-              		}
-            	}
-
+			post {
+		        	failure {
+		        		echo 'Ha habido algún problema con el JAR'
+					sh 'rm -rf target'
+		      		}
+		    	}
 		}
 		stage('deploy') {
 			steps {
@@ -38,7 +38,10 @@ pipeline
 	post {
 		success {
                 	echo 'Se ha terminado con exito'
-			sh 'echo ${CHANGE_AUTHOR} > tmp/result.txt'
+			sh 'echo test > /tmp/result.txt'
+              	}
+		failure {
+                	echo 'He tenido algún problema'
               	}
 	}
 
