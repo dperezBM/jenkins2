@@ -20,6 +20,12 @@ pipeline
 				sh './mvnw package'
 			}
 		}
+		stage('deploy') {
+			steps {
+				echo "Estoy desplegando a /tmp del servidor Jenkins"
+				sh 'cp target/calculadora-0.0.1-SNAPSHOT.jar /tmp'
+			}
+		}
 
 	}
 
