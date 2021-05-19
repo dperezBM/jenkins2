@@ -8,6 +8,12 @@ pipeline
 				sh './mvnw compile'
 			}
 		}
+		stage('test') {
+			steps {
+				echo "Estoy probando el codigo de Sprint Boot"
+				sh './mvnw test'
+			}
+		}
 
 	}
 
