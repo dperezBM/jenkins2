@@ -2,7 +2,8 @@ pipeline
 { 
 	agent any
 	triggers {
-	  pollSCM '* * * * 20'
+		pollSCM '* * * * *'
+		upstream 'ProbarAgente'
 	}
 	stages {
 		stage('compilar') {
