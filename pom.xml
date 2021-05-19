@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>curso.net</groupId>
 	<artifactId>calculadora</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>calculadora</name>
 	<description>Ejemplo para Jenkins</description>

@@ -14,6 +14,12 @@ pipeline
 				sh './mvnw test'
 			}
 		}
+		stage('package') {
+			steps {
+				echo "Estoy generando el JAR del proyecto"
+				sh './mvnw package'
+			}
+		}
 
 	}
 
